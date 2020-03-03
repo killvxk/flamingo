@@ -159,7 +159,7 @@ Flamingo server uses four database tables illustrated below:
 
    #### PC Client Compiling and Installing
 
-   All you need to do is just that open file **Flamingo.sln** in **flamingoclient/** directory with Visual Studio 2013 and compile it . The solution includes three projects illstrated in the table below:：
+   All you need to do is just that open file **Flamingo.sln** in **flamingoclient/** directory with Visual Studio 2019 and compile it . The solution includes three projects illstrated in the table below:：
 
    | Project Name |                       Usage                        |
    | :----------: | :------------------------------------------------: |
@@ -197,7 +197,7 @@ I promise that fatal problem of Flamingo, such as crashing or halting will be so
 
 #### Contact
 
-At last not the least, if you have any suggestions or good advice, welcome to contact with me. China Mainland users can contact with me by joining in my QQ group(**49114021**) or linking my public webchat account(『**easyserverdev**』).  Also you can send me emails,  my email address is **balloonwj@qq.com**. I am waiting for You sincerely.
+At last not the least, if you have any suggestions or good advice, welcome to contact with me. China Mainland users can contact with me by joining in my QQ group(**729995516**) or linking my public webchat account(『**easyserverdev**』).  Also you can send me emails,  my email address is **balloonwj@qq.com**. I am waiting for You sincerely.
 
 
 ### flamingo
@@ -343,7 +343,7 @@ flamingo IM是一款高性能、轻量级的开源即时通讯软件，目前包
 
    #### pc客户端编译和安装
 
-   使用Visual Studio 2013打开**flamingoclient/**目录下的**Flamingo.sln**即可编译。这个解决方案包括三个工程项目，说明如下：
+   使用Visual Studio 2019打开**flamingoclient/**目录下的**Flamingo.sln**即可编译。这个解决方案包括三个工程项目，说明如下：
 
    |   项目名称   |                 项目说明                 |
    | :----------: | :--------------------------------------: |
@@ -381,9 +381,9 @@ https://github.com/baloonwj/flamingo/issues/5。
 
 #### 联系方式
 
-如果您在使用这个项目的过程中遇到任何问题，或者您对我的项目有任何意见或者建议，再或者有不错的想法欢迎与我交流，可以通过我的微信公众号『**easyserverdev**』与我取得联系，或者可以给我发邮件：**balloonwj@qq.com**，您也可以加入QQ技术群进行交流讨论：**49114021**。
+如果您在使用这个项目的过程中遇到任何问题，或者您对我的项目有任何意见或者建议，再或者有不错的想法欢迎与我交流，可以通过我的微信公众号『**easyserverdev**』与我取得联系，或者可以给我发邮件：**balloonwj@qq.com**，您也可以加入QQ技术群进行交流讨论：**729995516**。
 
-![flamingo Snapshot](http://www.hootina.org/github_flamingo_imgs/articlelog.jpg)
+![flamingo Snapshot](http://www.hootina.org/github_flamingo_imgs/articlelognew.jpg)
 
 
 
@@ -391,7 +391,6 @@ https://github.com/baloonwj/flamingo/issues/5。
 
 #### 以下是部分功能截图：
 
-##### PC Client Snapshot
 ##### pc版截图
 ![flamingo Snapshot](http://www.hootina.org/github_flamingo_imgs/1.png)
 ![flamingo Snapshot](http://www.hootina.org/github_flamingo_imgs/2.png)
@@ -404,7 +403,6 @@ https://github.com/baloonwj/flamingo/issues/5。
 ![flamingo Snapshot](http://www.hootina.org/github_flamingo_imgs/9.png)
 
 ##### Android Version Snapshot
-##### 安卓版截图
 ![flamingo Snapshot](http://www.hootina.org/github_flamingo_imgs/m1.jpg)
 ![flamingo Snapshot](http://www.hootina.org/github_flamingo_imgs/m2.jpg)
 ![flamingo Snapshot](http://www.hootina.org/github_flamingo_imgs/m3.jpg)
