@@ -1,4 +1,4 @@
-#ifndef _WIN32
+ï»¿#ifndef _WIN32
 #include <arpa/inet.h>
 #else
 #include <Winsock2.h>
@@ -17,7 +17,7 @@ using namespace std;
 
 namespace net
 {
-    //¼ÆËãÐ£ÑéºÍ
+    //è®¡ç®—æ ¡éªŒå’Œ
     unsigned short checksum(const unsigned short* buffer, int size)
     {
         unsigned int cksum = 0;
@@ -30,14 +30,14 @@ namespace net
         {
             cksum += *(unsigned char*)buffer;
         }
-        //½«32Î»Êý×ª»»³É16
+        //å°†32ä½æ•°è½¬æ¢æˆ16
         while (cksum >> 16)
             cksum = (cksum >> 16) + (cksum & 0xffff);
 
         return (unsigned short)(~cksum);
     }
 
-    //½«Ò»¸ö4×Ö½ÚµÄÕûÐÍÊýÖµÑ¹Ëõ³É1~5¸ö×Ö½Ú
+    //å°†ä¸€ä¸ª4å­—èŠ‚çš„æ•´åž‹æ•°å€¼åŽ‹ç¼©æˆ1~5ä¸ªå­—èŠ‚
     void write7BitEncoded(uint32_t value, std::string& buf)
     {
         do
@@ -51,7 +51,7 @@ namespace net
         } while (value);
     }
 
-    //½«Ò»¸ö8×Ö½ÚµÄÕûÐÍÖµ±àÂë³É1~10¸ö×Ö½Ú
+    //å°†ä¸€ä¸ª8å­—èŠ‚çš„æ•´åž‹å€¼ç¼–ç æˆ1~10ä¸ªå­—èŠ‚
     void write7BitEncoded(uint64_t value, std::string& buf)
     {
         do
@@ -65,7 +65,7 @@ namespace net
         } while (value);
     }
 
-    //½«Ò»¸ö1~5¸ö×Ö½ÚµÄ×Ö·ûÊý×éÖµ»¹Ô­³É4×Ö½ÚµÄÕûÐÍÖµ
+    //å°†ä¸€ä¸ª1~5ä¸ªå­—èŠ‚çš„å­—ç¬¦æ•°ç»„å€¼è¿˜åŽŸæˆ4å­—èŠ‚çš„æ•´åž‹å€¼
     void read7BitEncoded(const char* buf, uint32_t len, uint32_t& value)
     {
         char c;
@@ -83,7 +83,7 @@ namespace net
         } while (c & 0x80);
     }
 
-    //½«Ò»¸ö1~10¸ö×Ö½ÚµÄÖµ»¹Ô­³É4×Ö½ÚµÄÕûÐÍÖµ
+    //å°†ä¸€ä¸ª1~10ä¸ªå­—èŠ‚çš„å€¼è¿˜åŽŸæˆ4å­—èŠ‚çš„æ•´åž‹å€¼
     void read7BitEncoded(const char* buf, uint32_t len, uint64_t& value)
     {
         char c;
@@ -127,7 +127,7 @@ namespace net
             return false;
         }
 
-        // Æ«ÒÆµ½Êý¾ÝµÄÎ»ÖÃ
+        // åç§»åˆ°æ•°æ®çš„ä½ç½®
         //cur += BINARY_PACKLEN_LEN_2;	
         cur += headlen;
         if (cur + fieldlen > ptr + len)
@@ -153,7 +153,7 @@ namespace net
             return false;
         }
 
-        // Æ«ÒÆµ½Êý¾ÝµÄÎ»ÖÃ
+        // åç§»åˆ°æ•°æ®çš„ä½ç½®
         //cur += BINARY_PACKLEN_LEN_2;	
         cur += headlen;
         if (cur + fieldlen > ptr + len)
@@ -178,7 +178,7 @@ namespace net
             return false;
         }
 
-        // Æ«ÒÆµ½Êý¾ÝµÄÎ»ÖÃ
+        // åç§»åˆ°æ•°æ®çš„ä½ç½®
         //cur += BINARY_PACKLEN_LEN_2;	
         cur += headlen;
 
@@ -209,7 +209,7 @@ namespace net
     }
     bool BinaryStreamReader::ReadInt64(int64_t& i)
     {
-        char int64str[128];
+        char int64str[128] = { 0 };
         size_t length;
         if (!ReadCString(int64str, 128, length))
             return false;
@@ -343,7 +343,7 @@ namespace net
         int32_t i2 = 999999999;
         if (isNULL == false)
             i2 = htonl(i);
-        m_data->append((char*)& i2, sizeof(i2));
+        m_data->append((char*)&i2, sizeof(i2));
         return true;
     }
     bool BinaryStreamWriter::WriteInt64(int64_t value, bool isNULL)
@@ -357,8 +357,7 @@ namespace net
             sprintf(int64str, "%lld", value);
 #endif
             WriteCString(int64str, strlen(int64str));
-        }
-        else
+        } else
             WriteCString(int64str, 0);
         return true;
     }
@@ -367,7 +366,7 @@ namespace net
         short i2 = 0;
         if (isNULL == false)
             i2 = htons(i);
-        m_data->append((char*)& i2, sizeof(i2));
+        m_data->append((char*)&i2, sizeof(i2));
         return true;
     }
     bool BinaryStreamWriter::WriteChar(char c, bool isNULL)
@@ -385,8 +384,7 @@ namespace net
         {
             sprintf(doublestr, "%f", value);
             WriteCString(doublestr, strlen(doublestr));
-        }
-        else
+        } else
             WriteCString(doublestr, 0);
         return true;
     }
